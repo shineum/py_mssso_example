@@ -12,7 +12,7 @@ These information from Azure App are required.
 - scopes (Manage - API permissions)
 - redirect url (Manage - Authentication - Web Redirect URIs)
 <br>
-redirect url for this sample is:<br>
+Redirect url for this sample is:<br>
 http://localhost:8000/sso_login_callback/<br>
 (Can be vary depending on port. it is assumed that port will be 8000 for this sample.)<br>
 
@@ -59,9 +59,9 @@ python manage.py runserver
 ```
 
 # Test
-Open browser and type in this url:
-http://localhost:8000
-
-According to the login status text will be different.
-When you click sso login link, it will redirect to MS login page.
-Login with ms account, then it will be back to redirect url.
+Open browser and type in this url:<br>
+http://localhost:8000<br>
+<br>
+According to the login status text will be different.<br>
+When you click sso login link, it will redirect to MS login page.<br>
+Login with ms account, then it will be back to redirect url.<br>

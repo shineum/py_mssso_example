@@ -32,9 +32,10 @@ _MSGRAPH_QUERY_SELECT_ITEMS_FOR_USER = ",".join(
 def sso_login(request):
     if not request.session.session_key:
         request.session.create()
-    request.session["msal_flow"] = MSSSOHelper.get().get_auth_code_flow()
+    msal_flow = MSSSOHelper.get().get_auth_code_flow()
+    request.session["msal_flow"] = msal_flow
     request.session.save()
-    return HttpResponseRedirect(request.session["msal_flow"].get("auth_uri"))
+    return HttpResponseRedirect(msal_flow.get("auth_uri"))
 
 
 # django login helper

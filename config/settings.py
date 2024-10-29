@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from environs import Env
+
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +58,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +125,27 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# SSO login
+USE_MS_SSO = env.bool("USE_MS_SSO", False)
+if USE_MS_SSO:
+    MS_SSO_TENANT_TYPE = env("MS_SSO_TENANT_TYPE", "SINGLE")
+    MS_SSO_TENANT_ID = env("MS_SSO_TENANT_ID", None)
+    MS_SSO_CLIENT_ID = env("MS_SSO_CLIENT_ID", None)
+    MS_SSO_CLIENT_SECRET = env("MS_SSO_CLIENT_SECRET", None)
+    MS_SSO_SCOPES = (env("MS_SSO_SCOPES", "")).split(",")
+    MS_SSO_REDIRECT_URL = env("MS_SSO_REDIRECT_URL", "")
+
+    from py_mssso import MSSSOHelper
+
+    MSSSOHelper.add(
+        **{
+            "tenant_type": MS_SSO_TENANT_TYPE,
+            "tenant_id": MS_SSO_TENANT_ID,
+            "client_id": MS_SSO_CLIENT_ID,
+            "client_secret": MS_SSO_CLIENT_SECRET,
+            "scopes": MS_SSO_SCOPES,
+            "redirect_url": MS_SSO_REDIRECT_URL,
+        }
+    )

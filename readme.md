@@ -23,6 +23,11 @@ http://localhost:8000/sso_login_callback/<br>
 git clone https://github.com/shineum/py_mssso_sample.git
 ```
 
+#### Change working directory
+```
+cd py_mssso_sample
+```
+
 #### Set environment variables
 copy sample.env to .env
 fill in the required values

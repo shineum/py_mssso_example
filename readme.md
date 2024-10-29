@@ -11,10 +11,10 @@ These information from Azure App are required.
 - Client secret (Manage - Certificates & secrets)
 - scopes (Manage - API permissions)
 - redirect url (Manage - Authentication - Web Redirect URIs)
-
-redirect url for this sample is:
-http://localhost:8000/sso_login_callback/
-(Can be vary depending on port. it is assumed that port will be 8000 for this sample.)
+\  
+redirect url for this sample is:\  
+http://localhost:8000/sso_login_callback/\  
+(Can be vary depending on port. it is assumed that port will be 8000 for this sample.)\  
 
 # Installation
 
@@ -48,7 +48,7 @@ For windows (cmd)
 python -m pip install -r requirements.txt
 ```
 
-#### init DB
+#### Initialize DB
 ```
 python manage.py migrate
 ```
@@ -59,9 +59,9 @@ python manage.py runserver
 ```
 
 # Test
-Open browser and type in url
+Open browser and type in this url:\  
 http://localhost:8000
-
-According to the login status text will be different.
-When you click sso login link, it will redirect to MS login page.
-Login with ms account, then it will be back to redirect url.
+\  
+According to the login status text will be different.\  
+When you click sso login link, it will redirect to MS login page.\  
+Login with ms account, then it will be back to redirect url.\  

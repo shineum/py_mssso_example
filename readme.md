@@ -29,7 +29,7 @@ cd py_mssso_sample
 ```
 
 #### Set environment variables
-copy sample.env to .env
+copy sample.env to .env<br>
 fill in the required values
 
 

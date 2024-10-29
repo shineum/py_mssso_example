@@ -12,9 +12,9 @@ These information from Azure App are required.
 - scopes (Manage - API permissions)
 - redirect url (Manage - Authentication - Web Redirect URIs)
 <br>
-redirect url for this sample is:
-http://localhost:8000/sso_login_callback/
-(Can be vary depending on port. it is assumed that port will be 8000 for this sample.)
+redirect url for this sample is:<br>
+http://localhost:8000/sso_login_callback/<br>
+(Can be vary depending on port. it is assumed that port will be 8000 for this sample.)<br>
 
 # Installation
 
